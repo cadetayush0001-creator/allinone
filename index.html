@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Sneha ❤️</title>
+
+<!-- Google Font: Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #ff4d88, transparent 35%),
+        linear-gradient(135deg, #16001f, #3b082f, #120016);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    animation: floatHeart linear forwards;
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small {
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 10vw, 95px);
+    margin: 15px 0;
+    background: linear-gradient(90deg, #fff, #ff82b2, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px #ff4f91); }
+    to { filter: drop-shadow(0 0 25px #ff4f91); }
+}
+
+.hero p {
+    font-size: 21px;
+    max-width: 600px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.scroll {
+    margin-top: 50px;
+    animation: bounce 1.5s infinite;
+    font-size: 15px;
+    opacity: 0.7;
+}
+
+@keyframes bounce {
+    50% { transform: translateY(12px); }
+}
+
+/* Glass Cards */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    margin: 30px 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #ffeaf3;
+}
+
+/* Reasons Grid */
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.reason {
+    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.reason:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255, 105, 160, 0.22);
+}
+
+.reason span {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* Love Letter */
+.letter {
+    text-align: left;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 22px;
+    color: #ff9ac2;
+    font-weight: 600;
+}
+
+/* Buttons */
+button {
+    margin-top: 25px;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff3d81, #ff72a8);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 61, 129, 0.35);
+    transition: 0.3s transform, 0.3s box-shadow;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px rgba(255, 61, 129, 0.55);
+}
+
+/* Secret Message */
+#secret {
+    display: none;
+    margin-top: 30px;
+    animation: appear 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.big-love {
+    font-size: clamp(38px, 8vw, 70px);
+    margin: 20px 0;
+    color: #ff7eaf;
+    font-weight: 700;
+}
+
+/* Final Section */
+.final {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.final h2 {
+    font-size: clamp(35px, 7vw, 65px);
+}
+
+.final p {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/* Custom Popup Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-box {
+    background: linear-gradient(135deg, rgba(255, 77, 136, 0.25), rgba(40, 0, 50, 0.85));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 40px 30px;
+    border-radius: 25px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-box h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #ff82b2;
+}
+
+.modal-box p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        width: 92%;
+        padding: 40px 0;
+    }
+    .hero {
+        min-height: 90vh;
+    }
+    .hero p {
+        font-size: 17px;
+    }
+    .card {
+        padding: 30px 20px;
+    }
+    .card h2 {
+        font-size: 28px;
+    }
+    .card p {
+        font-size: 16px;
+    }
+    .reasons {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="small">A little something for</div>
+        <h1>Sneha ❤️</h1>
+        <p>
+            There are billions of people in this world...
+            <br>
+            but somehow my heart chose you.
+        </p>
+        <div class="scroll">↓ Scroll slowly ↓</div>
+    </section>
+
+    <!-- INTRO -->
+    <div class="card">
+        <h2>Hey Sneha 🌸</h2>
+        <p>Ye website kisi special occasion ke liye nahi hai.</p>
+        <br>
+        <p>
+            Bas isliye hai kyunki kabhi-kabhi dil mein
+            jo feelings hoti hain na...
+            unhe words mein bolna mushkil hota hai.
+        </p>
+        <br>
+        <p>
+            Isliye socha...
+            <br><br>
+            <b>ek chhoti si duniya bana doon, sirf tumhare liye. ❤️</b>
+        </p>
+    </div>
+
+    <!-- WHY -->
+    <div class="card">
+        <h2>Why You? ❤️</h2>
+        <div class="reasons">
+            <div class="reason">
+                <span>😊</span>
+                Your smile
+            </div>
+            <div class="reason">
+                <span>👀</span>
+                Your beautiful eyes
+            </div>
+            <div class="reason">
+                <span>🌸</span>
+                Your presence
+            </div>
+            <div class="reason">
+                <span>❤️</span>
+                Your heart
+            </div>
+            <div class="reason">
+                <span>🥰</span>
+                The way you are
+            </div>
+            <div class="reason">
+                <span>✨</span>
+                Simply... YOU
+            </div>
+        </div>
+    </div>
+
+    <!-- LOVE LETTER -->
+    <div class="card letter">
+        <h2>💌 Dear Sneha...</h2>
+        <p>
+            Mujhe nahi pata ki main kab tumse itna attach ho gaya.
+            Kab tumhari smile meri favourite cheez ban gayi.
+            Kab tumhari ek chhoti si baat bhi mere liye important hone lagi.
+        </p>
+        <p>
+            Bas itna pata hai ki tum meri life ka ek bahut beautiful part ho.
+        </p>
+        <p>
+            Tumhare saath baat karna, tumhe dekhna, tumhari care karna... mujhe genuinely happy karta hai.
+        </p>
+        <p>
+            Main future ka promise nahi kar raha, bas present ki ek sachchai bol raha hoon:
+        </p>
+        <p style="text-align:center; font-size:24px; margin-top:25px;">
+            <b>I REALLY, REALLY LOVE YOU. ❤️</b>
+        </p>
+        <div class="signature">— Ayush ❤️</div>
+    </div>
+
+    <!-- SECRET -->
+    <div class="card">
+        <h2>🎁 One Little Surprise</h2>
+        <p>
+            Sneha, ek button hai...
+            <br>
+            aur iske andar ek chhoti si feeling chhupi hai.
+        </p>
+        <button onclick="showSecret()">Click Me ❤️</button>
+
+        <div id="secret">
+            <div class="big-love">I LOVE YOU</div>
+            <p>
+                Aaj ❤️<br>
+                Kal ❤️<br>
+                Aur har beautiful moment mein ❤️
+            </p>
+        </div>
+    </div>
+
+    <!-- FINAL -->
+    <section class="final">
+        <div style="font-size:70px;">❤️</div>
+        <h2>Ayush ❤️ Sneha</h2>
+        <p>
+            Some people become a chapter...
+            <br>
+            but you became my favourite story.
+        </p>
+        <button onclick="finalLove()">One Last Thing 💕</button>
+    </section>
+
+</div>
+
+<!-- Pop-up Modal -->
+<div class="modal-overlay" id="customModal">
+    <div class="modal-box">
+        <h3>Sneha ❤️</h3>
+        <p>
+            Bas ek baat yaad rakhna...<br><br>
+            Ayush loves you more than he can put into words. 🥹❤️
+        </p>
+        <button onclick="closeModal()">Forever & Always ✨</button>
+    </div>
+</div>
+
+<script>
+/* Floating Hearts */
+const emojis = ["❤️", "💖", "💕", "💗", "💓", "💘", "🥰", "✨"];
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 450);
+
+/* Secret Button Action */
+function showSecret() {
+    document.getElementById("secret").style.display = "block";
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+/* Final Button Modal & Burst */
+function finalLove() {
+    for (let i = 0; i < 60; i++) {
+        setTimeout(createHeart, i * 40);
+    }
+    setTimeout(() => {
+        document.getElementById("customModal").classList.add("active");
+    }, 800);
+}
+
+function closeModal() {
+    document.getElementById("customModal").classList.remove("active");
+}
+</script>
+
+</body>
+</html>
